@@ -81,6 +81,8 @@ test:
 #
 production:
   <<: *default
-  database: devops_blog_production
-  username: devops_blog
-  password: <%= ENV['DEVOPS_BLOG_DATABASE_PASSWORD'] %>
+  database: <%= ENV['RDS_DATABASE'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOST'] %>
+  post: 5432
